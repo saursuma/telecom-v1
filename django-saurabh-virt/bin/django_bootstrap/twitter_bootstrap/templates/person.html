@@ -1,0 +1,38 @@
+<!--<html>
+<body>-->
+{% extends "index.html" %}
+{% block sidebar %}
+		<ul>
+			<li> <a href="/persons/all">Persons</a></li>
+			
+		</ul>
+		{% endblock %}
+
+{% block content %}
+<div class="col-md-8">
+<h1>{{ person.last_name }}</h1>
+<p>{{ person.address }}</p>
+{% if person.thumbnail %}
+<p><img src="/static/assets/{{person.thumbnail}}" width="200"/></p>
+{% endif %}
+
+<h2>Assigned Tasks<h2>
+<p>{{ task.description }}</p>
+<p>{{ task.TaskStatus }} is the current status of task</p>
+<p><a href="/persons/like/{{person.id}}" class="btn btn-xs btn-success">Like</a></p>
+
+
+<h2>Comments</h2>
+{% for c in person.comment_set.all %}
+
+
+<p>{{c.description}} {{c.CreatedOn}}: {{c.TaskType}}  {{c.person}} {{c.id}}
+<a href="/persons/delete_comment/{{c.id}}" class="btn btn-xs btn-danger">Delete</a>
+</p>
+{% endfor %}
+
+<p><a href="/persons/add_comment/{{person.id}}" class="btn btn-primary">Add Comment</a></p>
+</div>
+{% endblock %}
+<!--</body>
+</html>-->

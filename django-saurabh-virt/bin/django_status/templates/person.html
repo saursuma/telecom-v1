@@ -1,0 +1,17 @@
+<!--<html>
+<body>-->
+{% extends "base.html" %}
+{% block sidebar %}
+		<ul>
+			<li> <a href="/persons/all">Persons</a></li>
+			
+		</ul>
+		{% endblock %}
+
+{% block content %}
+
+<h1>{{ person.title }}</h1>
+<p>{{ person.body }}</p>
+{% endblock %}
+<!--</body>
+</html>-->

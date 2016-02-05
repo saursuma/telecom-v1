@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% load bootstrap_toolkit %}
+
+{% block sidebar %}
+<ul>
+    <li><a href="/persons/get/{{person.id}}">Cancel</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+<form action="/persons/add_comment/{{person.id}}/" method="post">{% csrf_token %}
+<ul>
+{{form|as_bootstrap}}
+</ul>
+<div class="form-action">
+<input type="submit" name="submit" value="Post Comment">
+</div>
+</form>
+
+{% endblock %}
+

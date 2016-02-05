@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{% block title %}Scrum{% endblock %}</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static "assets/css/default.css" %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+</head>
+
+
+<body>
+	<div id="page">
+	
+	<div id="sidebar">
+		{% block sidebar %}
+		<ul>
+			<li> <a href="/persons/all">Persons</a></li>
+			<li> <a href="/admin/">Admin</a></li>
+		</ul>
+		{% endblock %}
+	</div>
+	
+	<div id="content">
+		{% block content %} This is the content area{% endblock %}
+	<img src="{% static "assets/images/scrum.png" %}" width="200" />
+	</div>
+	
+	</div>
+	
+</body>
+</html>
+
